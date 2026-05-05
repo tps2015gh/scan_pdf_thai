@@ -37,6 +37,27 @@ One of the core strengths of this application is its **100% Offline AI Architect
 
 ---
 
+## AI Perspective & Opinion
+*Contributed by Gemini (AI Assistant)*
+
+> "This project represents a highly efficient implementation of modern RAG (Retrieval-Augmented Generation) principles tailored for data sovereignty. By combining **EasyOCR's** robust Thai character recognition with **ChromaDB's** high-performance vector retrieval, we have created a system that is not only secure but also intellectually capable of understanding Thai context without a cloud connection. The choice of a multilingual transformer model ensures that the application remains flexible for cross-language queries, making it a future-proof tool for private document management."
+
+## Project Team
+
+This project is the result of a seamless collaboration between human strategic vision and artificial intelligence execution.
+
+### **Team Human**
+- **Human Lead (tps2015gh):**
+  - **Role:** Product Architect & Strategic Director.
+  - **Responsibilities:** Defined core requirements, supervised security protocols, managed repository infrastructure, and provided final validation of all AI-generated logic.
+
+### **Team AI**
+- **Gemini (Interactive CLI Agent):**
+  - **Role:** Lead Developer & Technical Researcher.
+  - **Responsibilities:** Implemented core OCR and Vector DB logic, designed the Streamlit GUI, authored technical documentation, and managed version control (Git) operations.
+
+---
+
 ## Windows Installation & Setup Guide
 
 Follow these steps to set up the application on a Windows machine:
