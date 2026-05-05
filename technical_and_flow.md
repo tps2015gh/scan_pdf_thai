@@ -40,3 +40,20 @@ The system follows a Pipeline-Search-UI architecture:
 - **Embeddings:** Sentence-Transformers (HuggingFace)
 - **Frontend:** Streamlit
 - **Language:** Python 3.12
+
+## 4. Understanding "Embedded" AI in this Project
+
+There are two distinct ways the term "Embedded" applies to this project:
+
+### A. Vector Embeddings (The Algorithm)
+"Embeddings" refers to the process of turning Thai text into mathematical vectors. Instead of storing text as strings, we store them as points in a 384-dimensional space. The distance between these points represents the similarity in meaning.
+
+### B. Local AI vs. Centralized Cache (The Storage)
+While the AI runs **100% locally** (Edge/Embedded AI), you will not see the large AI model files (.bin, .safetensors) inside the project directory.
+
+**Why are they not in the project folder?**
+1.  **Shared Resources:** Python's AI libraries (`torch`, `transformers`) use a central cache folder (usually `~/.cache/`) to store models. This allows multiple projects to share the same model files without wasting disk space.
+2.  **Git Best Practices:** Large binary files (1GB+) should not be committed to Git. The code is designed to automatically verify and load the model from the local cache.
+3.  **Portability:** By keeping the logic (code) and data (ChromaDB) separate from the heavy AI models, the project remains lightweight and easy to manage.
+
+**Result:** The project is **Offline** because the computation happens on your CPU/GPU, but the **Model Storage** is managed by the system-wide Python environment for efficiency.
