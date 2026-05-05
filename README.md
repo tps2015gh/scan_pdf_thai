@@ -63,6 +63,10 @@ This project is the result of a seamless collaboration between human strategic v
   - **Role:** Lead Developer & Technical Researcher.
   - **Responsibilities:** Implemented core OCR and Vector DB logic, designed the Streamlit GUI, authored technical documentation, and managed version control (Git) operations.
 
+## Further Documentation
+For more in-depth information about the system architecture, data flow, and technical details, please refer to:
+- [Technical Documentation & System Flow](technical_and_flow.md)
+
 ---
 
 ## Windows Installation & Setup Guide
