@@ -9,6 +9,34 @@ A specialized tool for indexing and searching Thai language PDF documents, inclu
 - **Persistent Database:** Uses ChromaDB to store embeddings and metadata locally.
 - **Full Text View:** Easily read and copy extracted text from PDFs.
 
+## Offline AI & Privacy
+
+One of the core strengths of this application is its **100% Offline AI Architecture**. Once the initial setup is complete, no data ever leaves your machine. This makes it ideal for processing sensitive or confidential Thai documents.
+
+### In-Depth AI Components:
+
+#### 1. Multilingual Embeddings (Sentence-Transformers)
+- **Model:** `paraphrase-multilingual-MiniLM-L12-v2`
+- **Function:** This model converts Thai and English text into high-dimensional vectors (embeddings) that capture the **semantic meaning** of the sentences. 
+- **Offline Nature:** The model is downloaded once from HuggingFace during the first run and thereafter resides locally on your disk. All vector calculations are performed using your local CPU/GPU.
+
+#### 2. Local OCR Engine (EasyOCR)
+- **Engine:** `EasyOCR` (built on PyTorch)
+- **Function:** When a PDF is identified as a "scanned image" (where text cannot be directly copied), EasyOCR uses specialized Deep Learning models (CRAFT for text detection and a sequence-to-sequence model for Thai character recognition) to extract the text.
+- **Offline Nature:** Unlike cloud-based OCR services (like Google Vision or AWS Textract), EasyOCR runs entirely on your local hardware. No images are uploaded to any server.
+
+#### 3. Local Vector Database (ChromaDB)
+- **Database:** `ChromaDB`
+- **Function:** It stores the extracted text along with its corresponding AI-generated embeddings. It allows for lightning-fast similarity searches across thousands of pages.
+- **Offline Nature:** The database is stored in the `chroma_db/` folder within your project directory. It is a serverless, local database that does not require an internet connection or an external cloud subscription.
+
+### Security Benefits
+- **Zero API Keys:** You do not need any API keys from OpenAI, Google, or Anthropic.
+- **Data Sovereignty:** Your documents, their extracted text, and the search indices remain exclusively on your local storage.
+- **No Recurring Costs:** Since it uses open-source models and runs on your hardware, there are no per-page or per-query charges.
+
+---
+
 ## Windows Installation & Setup Guide
 
 Follow these steps to set up the application on a Windows machine:
