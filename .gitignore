@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+
+# Project Specific
+chroma_db/
+data_files/
+test_extraction.py
+test_ocr.py
+test_ocr_thai.py
+
+# Streamlit
+.streamlit/
+
+# OS
+.DS_Store
+Thumbs.db

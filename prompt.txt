@@ -1,0 +1,13 @@
+create program to scan thai in pdf  add this to vectordb chrome_db or else to search .
+create gui to search when user search text then show pdf link to can view that file  
+when show file show all text in that pdf to read and can copy  
+
+data pdf in folders 
+
+gui show to total pdf file and  char line count for each pdf  
+
+this be gui as standalone web app 
+
+main focus is to search from text to identify which pdf and then can easily click to view 
+
+

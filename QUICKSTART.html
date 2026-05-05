@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Start - Thai PDF Searcher</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f4f7f6;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        h2 { color: #2980b9; margin-top: 30px; }
+        code {
+            background: #e8eff1;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+        }
+        pre {
+            background: #2d3436;
+            color: #dfe6e9;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+        .step {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            border-left: 4px solid #3498db;
+        }
+        .note {
+            background: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Thai PDF Searcher - Quick Start</h1>
+        
+        <p>This application allows you to search through Thai PDF documents (including scanned ones) using Vector Search and OCR.</p>
+
+        <div class="step">
+            <h2>Step 1: Install Dependencies</h2>
+            <p>Ensure you have Python installed, then run:</p>
+            <pre>pip install pdfplumber chromadb streamlit sentence-transformers pymupdf easyocr torch torchvision</pre>
+        </div>
+
+        <div class="step">
+            <h2>Step 2: Index your PDFs</h2>
+            <p>Place your PDF files in the <code>data_files/</code> folder and run the indexer. <i>(Note: This is already done for current files)</i></p>
+            <pre>python indexer.py</pre>
+        </div>
+
+        <div class="step">
+            <h2>Step 3: Launch the Search GUI</h2>
+            <p>Start the web-based search interface:</p>
+            <pre>streamlit run app.py</pre>
+        </div>
+
+        <div class="note">
+            <strong>Note:</strong> The first time you run <code>indexer.py</code> or <code>app.py</code>, it may download AI models (about 1GB total). This only happens once.
+        </div>
+
+        <p style="margin-top: 40px; font-size: 0.9em; color: #666;">
+            Project Path: <code>C:\dev2\scan_pdf_thai</code>
+        </p>
+    </div>
+</body>
+</html>
