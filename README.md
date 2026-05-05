@@ -18,12 +18,19 @@ One of the core strengths of this application is its **100% Offline AI Architect
 #### 1. Multilingual Embeddings (Sentence-Transformers)
 - **Model:** `paraphrase-multilingual-MiniLM-L12-v2`
 - **Function:** This model converts Thai and English text into high-dimensional vectors (embeddings) that capture the **semantic meaning** of the sentences. 
-- **Offline Nature:** The model is downloaded once from HuggingFace during the first run and thereafter resides locally on your disk. All vector calculations are performed using your local CPU/GPU.
+- **Offline Nature:** The model is downloaded once from HuggingFace during the first run and thereafter resides locally on your disk. 
+- **Storage Location:** 
+  - Windows: `C:\Users\<YourUser>\.cache\torch\sentence_transformers`
+- **Customization:** You can swap the model in `indexer.py` and `app.py` by changing the `model_name` parameter. Other excellent options include:
+  - `paraphrase-multilingual-mpnet-base-v2` (Higher accuracy, but slower/larger)
+  - `distiluse-base-multilingual-cased-v1` (Very fast multilingual model)
 
 #### 2. Local OCR Engine (EasyOCR)
 - **Engine:** `EasyOCR` (built on PyTorch)
-- **Function:** When a PDF is identified as a "scanned image" (where text cannot be directly copied), EasyOCR uses specialized Deep Learning models (CRAFT for text detection and a sequence-to-sequence model for Thai character recognition) to extract the text.
-- **Offline Nature:** Unlike cloud-based OCR services (like Google Vision or AWS Textract), EasyOCR runs entirely on your local hardware. No images are uploaded to any server.
+- **Function:** When a PDF is identified as a "scanned image", EasyOCR uses specialized Deep Learning models for Thai character recognition.
+- **Offline Nature:** Models are downloaded on first use and stored locally.
+- **Storage Location:** 
+  - Windows: `C:\Users\<YourUser>\.EasyOCR\model`
 
 #### 3. Local Vector Database (ChromaDB)
 - **Database:** `ChromaDB`
